@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+<div id="mask" class="mask opacity"></div>
+	<div id="forCenter" class="content display-middle">
+		<div id="over" class="block finale">
+			<h2 style="text-align: center; padding-top: 1em">游戏结束</h2>
+			<br>
+			<p style="text-align: center; font-weight: bolder; color: red">坠机！！坠机！！！</p>
+			<br>
+			<p style="text-align: center; font-weight: bolder">在这场精彩的战役中，您一共击落了<span id="fighter_count" style="color: #ff7300; font-size: 20px">&nbsp;0&nbsp;</span>架TIE战斗机，
+				击毁了<span id="death_count" style="color: #ff7300; font-size: 20px">&nbsp;0&nbsp;</span>座"死星"空间站。</p>
+			<br>
+			<p style="text-align: center; font-weight: bolder">最终得分：<span id="finale_" style="color: #ff7300; font-size: 20px">0</span></p>
+			<br><br><br><br>
+			<button class="button-85 display-middle" type="submit" id="restart">重新开始</button>
+		</div>
+	</div>
+<div class="text-center">
+
+	<div>
+		<h2 class="neon">生命游戏</h2><br>
+		<div class="block" style = "text-align:center;">
+			<canvas id="myCanvas" height="560" width="1200"></canvas>
+			<div class="epoch-show">当前周期：&nbsp;<span id="epoch">0</span>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+		</div>
+
+
+		<div>
+			<button class="button-85" type="submit" id="start">开始</button>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<button class="button-85" type="submit" id="stop">暂停</button>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<button class="button-85" type="submit" id="random">随机</button>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<button class="button-85" type="submit" id="clear">清空</button>
+		</div>
+	</div>
+	<script type="text/javascript" src="scripts/life.js"></script>
+</div>
+<br><br><br><br>
+
+<div class="text-center">
+
+	<div>
+		<h2 class="neon">贪吃蛇</h2>
+		<div id="vs">
+			<img src="assets/xw.png" id="luke" alt="plane" width="100px">
+			<img src="assets/ds.png" id="death" alt="plane" width="60px">
+			&nbsp;<img src="assets/tie.png" id="tie" alt="plane" width="70px">
+		</div>
+		<br><br>
+
+		<div class="block">
+			<canvas id="snake" height="560" width="1200"></canvas>
+			<br>
+			<div class="score-show">当前分数：&nbsp;<span id="score">0</span>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+		</div>
+
+	</div>
+	<script src="scripts/snake.js"></script>
+
+</div>
+
+
+
+</body>
+
+<!-- HTML !-->
+
