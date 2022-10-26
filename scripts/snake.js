@@ -154,18 +154,7 @@ function drawFruits()
     const star = "#ffffff"
     ctx.fillStyle = fruit.color;
     ctx.strokeStyle = fruit.color
-    // ctx.fillRect(fruit.x * gridSize, fruit.y * gridSize, gridSize - 2, gridSize - 2);
-    // ctx.beginPath();
-    // ctx.arc(fruit.x * gridSize + (gridSize - 2) / 2, fruit.y * gridSize + (gridSize - 2) / 2, 14, 0, 2 * Math.PI);
-    // ctx.fill();
-    // ctx.fillStyle = star;
-    // ctx.beginPath();
-    // ctx.arc(fruit.x * gridSize + (gridSize - 2) / 2 + 3, fruit.y * gridSize + (gridSize - 2) / 2 - 4, 6, 0, 2 * Math.PI);
-    // ctx.fill();
-    // ctx.fillStyle = "#737373";
-    // ctx.beginPath();
-    // ctx.arc(fruit.x * gridSize + (gridSize - 2) / 2 + 5, fruit.y * gridSize + (gridSize - 2) / 2 - 6, 4, 0, 2 * Math.PI);
-    // ctx.fill();
+
     if (fruit.points === 3){
       ctx.drawImage(img3,fruit.x * gridSize + (gridSize - 2) / 2 ,fruit.y * gridSize + (gridSize - 2) / 2, 35, 35);
     }
@@ -178,6 +167,7 @@ function drawFruits()
 
 function handleSnakeEat()
 {
+  var one_fruit = 0
   for(let i = 0; i < fruits.length; i++)
   {
     const fruit = fruits[i];
@@ -193,11 +183,16 @@ function handleSnakeEat()
       snakeTail += fruit.points;
       score.innerHTML = snakeTail - 5;
       fruits.splice(i, 1);
-
-      spawnFruit();
-
-      if(getRandomInt(1, 10) === 10)
+      if(getRandomInt(1, 10) === 10){
         spawnSpecialFruit();
+        one_fruit = 1
+      }
+
+      if(one_fruit === 0){
+        spawnFruit();
+        one_fruit = 0
+      }
+
     }
   }
 }
