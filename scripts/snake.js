@@ -305,7 +305,6 @@ function popUp() {
   var mask = document.getElementById('mask')
   var forCenter = document.getElementById('forCenter')
   var over = document.getElementById('over')
-
   mask.style.display = 'block';
   forCenter.style.display = 'block';
   over.style.display = 'block';
